@@ -9,3 +9,6 @@ coverage/
 .idea/
 .vscode/
 *.tsbuildinfo
+
+# Material de apoio/insumos (não faz parte da entrega)
+material-base/
