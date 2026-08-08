@@ -243,6 +243,8 @@ Status possíveis: `201`, `400` (URL sem TLS, lista de status inválida), `401`,
 
 `GET /api/v1/webhooks?customerId=<uuid>&page=1&pageSize=20`. Requer autenticação.
 
+Requisição sem corpo. Os parâmetros vão na consulta: `customerId` obrigatório, `page` e `pageSize` opcionais, com os mesmos padrões de paginação dos demais módulos.
+
 Resposta `200 OK`, no formato paginado do projeto. A secret nunca aparece na listagem.
 
 ```json
@@ -300,6 +302,8 @@ A alteração vale para transições futuras. Eventos já na outbox continuam se
 
 `DELETE /api/v1/webhooks/:id`. Requer autenticação.
 
+Requisição sem corpo. O identificador do cadastro vai no caminho.
+
 Resposta `204 No Content`, sem corpo.
 
 Status possíveis: `204`, `401`, `404`.
@@ -308,7 +312,9 @@ Decisão de desenho: a remoção apaga junto os eventos daquele endpoint ainda n
 
 #### 5.5 Rotacionar secret
 
-`POST /api/v1/webhooks/:id/secret/rotate`. Requer autenticação. Sem corpo. O caminho é decisão de desenho desta especificação; a operação é a exigida em `[09:21]`.
+`POST /api/v1/webhooks/:id/secret/rotate`. Requer autenticação. O caminho é decisão de desenho desta especificação; a operação é a exigida em `[09:21]`.
+
+Requisição sem corpo. O identificador do cadastro vai no caminho, e a operação não recebe parâmetro: a secret nova é gerada pela plataforma.
 
 Resposta `200 OK`:
 
@@ -330,6 +336,8 @@ Status possíveis: `200`, `401`, `404`, `409` (rotação pedida com uma sobrepos
 #### 5.6 Consultar histórico de entregas
 
 `GET /api/v1/webhooks/:id/deliveries?page=1&pageSize=20`. Requer autenticação. Caminho definido em `[09:34]`.
+
+Requisição sem corpo. O identificador do cadastro vai no caminho, e `page` e `pageSize` na consulta.
 
 Resposta `200 OK`:
 
@@ -356,6 +364,8 @@ Status possíveis: `200`, `400`, `401`, `404`.
 #### 5.7 Reprocessar item da dead letter
 
 `POST /api/v1/admin/webhooks/dead-letter/:id/replay`. Requer autenticação **e papel administrativo** `[09:36]`. Caminho definido em `[09:35]`.
+
+Requisição sem corpo. O identificador do item na dead letter vai no caminho, e o autor da operação vem do token, que é o dado registrado para auditoria.
 
 Resposta `202 Accepted`:
 
