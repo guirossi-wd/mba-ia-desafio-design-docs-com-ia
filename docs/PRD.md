@@ -343,7 +343,7 @@ Performance
 
 Disponibilidade
 
-- A entrega de eventos não pode depender do ciclo de vida da API. Reinício ou publicação da API não interrompe a entrega `[09:11]`
+- A entrega de eventos não pode depender do ciclo de vida da API. Um reinício da API não interrompe a entrega `[09:11]`
 - A indisponibilidade do endpoint do cliente não pode impedir a mudança de status de um pedido `[09:04]`
 - A entrega tolera indisponibilidade do destino por quase 15 horas sem intervenção `[09:17]`
 
