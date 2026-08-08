@@ -32,7 +32,7 @@ Duas regras que apliquei em todos os ciclos:
 
 **Todo documento passa por um revisor separado.** Não pedi ao mesmo contexto que produziu o texto para revisá-lo. Abri um subagente com contexto limpo, instruções adversariais e permissão de escrita. O resultado justifica: duas rodadas de revisão sobre os 8 ADRs, depois 15 defeitos corrigidos no RFC, 27 no FDD e 16 no PRD.
 
-**Eu verifico o revisor.** Toda correção fundamentada em citação foi conferida por mim na fonte antes de aceitar. Em um caso o revisor estava certo sobre a regra e errado sobre o mérito, e eu revertei a correção dele (detalhado abaixo).
+**Eu verifico o revisor.** Toda correção fundamentada em citação foi conferida por mim na fonte antes de aceitar. Em um caso o revisor estava certo sobre a regra e errado sobre o mérito, e eu reverti a correção dele (detalhado abaixo).
 
 ## Prompts customizados
 
